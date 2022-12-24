@@ -45,8 +45,6 @@ public class Log_In_Steps extends Base_PO {
 
     @When("I enter a wrong username {word}")
     public void i_enter_a_wrong_username(String incorrectUsername) {
-//        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys(incorrectUsername);
-//        sendKeys(By.xpath("//input[@id='user-name']"), incorrectUsername);
         login_po.setUsername(incorrectUsername);
     }
 
@@ -57,14 +55,11 @@ public class Log_In_Steps extends Base_PO {
 
     @Then("I should be presented with unsuccessful login message")
     public void i_should_be_presented_with_unsuccessful_login_message() {
-//        String errorMessage = driver.findElement(By.xpath("//h3[@data-test='error']")).getText();
-//        Assert.assertEquals(errorMessage, "Epic sadface: Username and password do not match any user in this service");
         login_po.validateUnsucessfulLogin();
     }
 
     @When("I enter a blank username")
     public void i_enter_a_blank_username() {
-//        driver.findElement(By.xpath("//input[@id='user-name']")).sendKeys("");
         login_po.setUsername("");
     }
     @When("I enter a blank password")
